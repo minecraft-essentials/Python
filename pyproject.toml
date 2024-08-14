@@ -1,0 +1,50 @@
+[build-system]
+requires = ["maturin>=1.7,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "minecraft-essentials"
+description = "The python version of Minecraft essentials"
+keywords = ["modpack-launchers", "minecraft", "library", "python"]
+authors = [{ name = "Eveeifyeve", email = "eveeg1971@gmail.com" }]
+maintainers = [{ name = "Eveeifyeve", email = "eveeg1971@gmail.com" }]
+readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = [
+    "Development Status :: 3 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD-3-Clause License",
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+requires-python = ">=3.8"
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://minecraft-essentials.github.io"
+Changelog = "https://github.com/minecraft-essentials/Python/blob/main/CHANGELOG.md"
+"Bug Tracker" = "https://github.com/minecraft-essentials/Python/issues"
+Source = "https://github.com/minecraft-essentials/Python"
+
+[tool.ruff]
+line-length = 120
+target-version = "py37"
+
+[tool.ruff.lint.isort]
+known-first-party = ["minecraft_essentials"]
+known-third-party = ["hypothesis", "pytest"]
+
+[tool.ruff.format]
+skip-magic-trailing-comma = false
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+python-source = "python"

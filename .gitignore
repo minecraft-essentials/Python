@@ -1,0 +1,7 @@
+/target
+
+
+# nix 
+.devenv
+.direnv
+./nix/secrets/*.age
